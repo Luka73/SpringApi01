@@ -13,11 +13,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import br.com.cotiinformatica.dtos.ClientePostDTO;
 import br.com.cotiinformatica.entities.Cliente;
 import br.com.cotiinformatica.services.ClienteService;
-
 import java.util.ArrayList;
 import java.util.List;
 

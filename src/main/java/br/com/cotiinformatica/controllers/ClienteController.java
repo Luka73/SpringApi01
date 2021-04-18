@@ -27,8 +27,8 @@ public class ClienteController {
 	@Autowired
 	private ClienteService clienteService;
 
-	// Método para disponibilizar um serviço de cadastro de cliente na API.
-	@RequestMapping(value = RESOURCE, method = RequestMethod.POST)
+	@CrossOrigin // Injeta a configuração feita em CorsConfiguration permitindo acesso de qq origem.
+	@RequestMapping(value = RESOURCE, method = RequestMethod.POST) // Método para disponibilizar um serviço de cadastro de cliente na API.
 	@ResponseBody // indica que o método irá retornar dados no serviço
 	public ResponseEntity<ClientePostResponse> post(@RequestBody ClientePostDTO dto) {
 
@@ -49,6 +49,7 @@ public class ClienteController {
 		}
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = RESOURCE, method = RequestMethod.PUT)
 	@ResponseBody
 	public ResponseEntity<ClientePutResponse> put(@RequestBody ClientePutDTO dto) {
@@ -79,6 +80,7 @@ public class ClienteController {
 		}
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = RESOURCE + "/{id}", method = RequestMethod.DELETE)
 	@ResponseBody
 	public ResponseEntity<ClienteDeleteResponse> delete(@PathVariable("id") Integer id) {
@@ -108,6 +110,7 @@ public class ClienteController {
 		}
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = RESOURCE, method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<List<ClienteGetDTO>> getAll() {
@@ -139,6 +142,7 @@ public class ClienteController {
 
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = RESOURCE + "/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<ClienteGetDTO> getById(@PathVariable("id") Integer id) {
